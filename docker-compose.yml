@@ -1,0 +1,15 @@
+services:
+  node-red:
+    image: nodered/node-red:latest
+    restart: always
+    environment:
+      - TZ=America/Lima
+    ports:
+      - "1880:1880"
+    networks:
+      - node-red-net
+    volumes:
+      - ./node-red-data:/data
+
+networks:
+  node-red-net:
